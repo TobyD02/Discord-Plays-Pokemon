@@ -1,15 +1,23 @@
 import os
+import time
 import discord
 import pyautogui as pag
 from discord.ext import commands
+
 
 with open('token.txt', 'r') as f:
     TOKEN = f.read()
 
 bot = commands.Bot('!')
 
+# Initialising
+
 # Commands go here
-os.system('emulationstation')
+def pressKey(key):
+    pag.keyDown(key)
+    time.sleep(0.1)
+    pag.keyUp(key)
+    time.sleep(0.5)
 
 async def ss(ctx, ):
     shot = pag.screenshot('shot.png')
@@ -21,32 +29,32 @@ async def sayhi(ctx, ):
 
 @bot.command()
 async def up(ctx):
-    pag.press('up')
+    pressKey('up')
     await ss(ctx)
 
 @bot.command()
 async def down(ctx, ):
-    pag.press('down')
+    pressKey('down')
     await ss(ctx)
 
 @bot.command()
 async def left(ctx, ):
-    pag.press('left')
+    pressKey('left')
     await ss(ctx)
 
 @bot.command()
 async def right(ctx, ):
-    pag.press('right')
+    pressKey('right')
     await ss(ctx)
 
 @bot.command()
 async def a(ctx, ):
-    pag.press('a')
+    pressKey('d')
     await ss(ctx)
 
 @bot.command()
 async def b(ctx, ):
-    pag.press('b')
+    pressKey('s')
     await ss(ctx)
 
 # ------------------
