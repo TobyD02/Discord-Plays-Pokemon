@@ -9,7 +9,7 @@ with open('token.txt', 'r') as f:
 bot = commands.Bot('!')
 
 # Commands go here
-os.system('open pokemonEmerald.gba')
+os.system('emulationstation')
 
 async def ss(ctx, ):
     shot = pag.screenshot('shot.png')
